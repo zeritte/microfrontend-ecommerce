@@ -17,7 +17,7 @@ module.exports = {
         faker: {
           singleton: true,
         },
-      },
+      }, 
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",

@@ -1,6 +1,10 @@
 import faker from "faker";
 
 export function mount(q) {
+  const el = document.querySelector(q);
+
+  if (!el) return;
+
   let products = "";
 
   for (let i = 0; i < 5; i++) {
@@ -8,9 +12,9 @@ export function mount(q) {
     products += `<div>${name}</div>`;
   }
 
-  document.querySelector(q).innerHTML = products;
+  el.innerHTML = products;
 }
 
-// if (process.env.NODE_ENV === "development") {
-//   mount("#dev-products");
-// }
+if (process.env.NODE_ENV === "development") {
+  mount("#dev-products");
+}
